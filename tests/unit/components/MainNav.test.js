@@ -24,3 +24,27 @@ describe("MainNav", () => {
     ]);
   });
 });
+
+describe("when user is logged out", () => {
+  it("prompts user to sign in", () => {
+    const wrapper = mount(MainNav);
+    const loginButton = wrapper.find("[data-test='login-button']");
+    const profileImage = wrapper.find("[data-test='profile-image']");
+    expect(loginButton.exists()).toBe(true); //will return true if the button exists
+    expect(profileImage.exists()).toBe(false);
+  });
+});
+
+describe("when user logs in", () => {
+  it("displays user profile picture", async () => {
+    const wrapper = mount(MainNav);
+    let profileImage = wrapper.find("[data-test='profile-image']");
+    expect(profileImage.exists()).toBe(false);
+
+    const loginButton = wrapper.find("[data-test='login-button']");
+    await loginButton.trigger("click"); //until everything above is finished, don't do this
+
+    profileImage = wrapper.find("[data-test='profile-image']");
+    expect(profileImage.exists()).toBe(true);
+  });
+});
