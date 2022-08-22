@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "Subnav",
+  name: "SubNav",
   data() {
     return {
       onJobResultsPage: true,
