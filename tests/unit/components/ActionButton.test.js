@@ -10,5 +10,16 @@ describe("ActionButton", () => {
         type: "primary",
       },
     });
+    expect(wrapper.text()).toMatch("I'm so clickable");
+  });
+
+  it("applies one of several styles to button", () => {
+    const wrapper = mount(ActionButton, {
+      props: {
+        type: "primary",
+      },
+    });
+    const button = wrapper.find("button");
+    expect(button.classes("primary")).toBe(true);
   });
 });
