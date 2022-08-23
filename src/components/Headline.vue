@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="mb-16">
         <h1 class="font-bold tracking-tighter text-8xl mb-14">
             <span :class="actionClasses">{{ action }}</span><br>
              for everyone
@@ -33,11 +33,11 @@ export default {
         clearInterval(this.interval);
     },
     methods: {
-            changeTitle(){
-                this.interval = setInterval(() => {
-                const actions = ["Build", "Create", "Design", "Code"]
-                this.action = nextElementInList(actions, this.action)
-            }, 3000);
+        changeTitle(){
+            this.interval = setInterval(() => {
+            const actions = ["Build", "Create", "Design", "Code"]
+            this.action = nextElementInList(actions, this.action)
+        }, 3000);
         }
     },
 };
