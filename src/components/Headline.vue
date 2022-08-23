@@ -4,7 +4,7 @@
             <span :class="actionClasses">{{ action }}</span><br>
              for everyone
         </h1>
-        <h2>Find your next job at Bobo corp</h2>
+        <h2 class="text-3xl font-light ">Find your next job at Bobo corp</h2>
     </section>
 </template>
 
@@ -20,10 +20,7 @@ export default {
     computed: {
         actionClasses(){
             return {
-                build: this.action === "Build",
-                create: this.action === "Create",
-                design: this.action === "Design",
-                code: this.action === "Code",
+                [this.action.toLowerCase()]: true,
             };
         },
     },
