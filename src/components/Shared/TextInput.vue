@@ -26,7 +26,11 @@ export default {
     methods: {
         handleInput($event) {
             this.value = $event.target.value
+            this.$emit("handleInput", this.value); //custom event!
+            //$emit() takes two args, first is a unique name
+            //second is the information being passed
         }
+
     }
 }
 </script>
