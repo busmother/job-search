@@ -4,14 +4,21 @@
         <div class="flex flex-nowrap flex-1 h-full text-base font-light">
             <div class="relative flex items-center flex-1 h-full pr-3">
                 <label class="absolute left-0 -top-10">Role</label>
-                <input type="text" placeholder="Software engineer" class="w-full text-lg font-normal focus:outline-none" />
+                <input type="text" 
+                v-model="role"
+                placeholder="Software engineer" 
+                class="w-full text-lg font-normal focus:outline-none"  />
             </div>
             <span class="flex items-center h-full px-3 border-l border-r border-brand-gray-3 bg-brand-gray-2">
                 in
             </span>
             <div class="relative flex items-center flex-1 h-full pl-3">
                 <label class="absolute left-0 -top-10">Where?</label>
-                <input type="text" placeholder="Los Angeles" class="w-full text-lg font-normal focus:outline-none" />
+                <input 
+                type="text" 
+                v-model="location"
+                placeholder="Los Angeles" 
+                class="w-full text-lg font-normal focus:outline-none" />
                 <action-button text="Search" type="secondary" class="rounded-r-3xl" />
             </div>
         </div>
@@ -25,6 +32,12 @@ export default{
     name: "JobSearchForm",
     components: {
         ActionButton,
+    },
+    data () {
+        return {
+            role: "",
+            location: "",
+        }
     },
 };
 </script>
