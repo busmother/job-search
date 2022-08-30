@@ -27,7 +27,7 @@
                     placeholder="Las Vegas" 
                     data-test="location-input"
                 />
-                <action-button text="Search" type="secondary" class="rounded-r-3xl" />
+                <action-button text="Search" type="secondary" class="rounded-r-3xl" data-test='form-submit-button'/>
             </div>
         </div>
     </form>
