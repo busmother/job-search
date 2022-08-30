@@ -15,7 +15,7 @@ describe("Headline", () => {
   it("displays introductory action verb", () => {
     const wrapper = mount(Headline);
     const actionPhrase = wrapper.find("[data-test='action-phrase']");
-    expect(actionPhrase.text()).toBe("Build for everyone");
+    expect(actionPhrase.text()).toBe("Build");
   });
 
   it("changes action verb at a consistent interval", () => {
@@ -28,7 +28,7 @@ describe("Headline", () => {
     jest.runOnlyPendingTimers();
     await nextTick();
     const actionPhrase = wrapper.find("[data-test='action-phrase']");
-    expect(actionPhrase.text()).toBe("Create for everyone");
+    expect(actionPhrase.text()).toBe("Create");
   });
 
   it("removes interval when component disappears", () => {
